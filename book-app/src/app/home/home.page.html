@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+    <ion-label class="welcomeMessage">
+    <ion-text color="light">Welcome Back</ion-text>
+    <ion-text color="white"><p>Log In</p></ion-text>
+  </ion-label>
+   <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+   <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+     <ion-item>
+        <ion-icon name="mail-outline" slot="end"></ion-icon>
+        <ion-input
+        formControlName="username" type="text" required
+          placeholder="Enter email address"
+        ></ion-input>
+      </ion-item>
+       <ion-note color="danger" *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+          Username is required (min 3 chars).
+        </ion-note>
+        <ion-item class="ion-margin-vertical">
+        <ion-icon
+         [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'"
+          [color]="isTypePassword ? 'medium' : 'primary'"
+          slot="end"
+        ></ion-icon>
+        <ion-input formControlName="password" type="password"
+          placeholder="Enter password"
+        ></ion-input>
+      </ion-item>
+       <ion-note color="danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Password must be at least 6 characters.
+        </ion-note>
+      <ion-row class="ion-margin-vertical">
+        <ion-col class="alignItems">
+          <div align="left">
+            <ion-checkbox></ion-checkbox>
+            <ion-note>Remember me</ion-note>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div align="right">
+            <ion-note>Forgot password?</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" shape="round" type="submit" [disabled]="loginForm.invalid"
+        >Log In</ion-button
+      >
+      <p class="signUp">
+        <ion-note
+          >Not a member yet?
+          <ion-text color="primary">Sign Up</ion-text>
+        </ion-note>
+      </p>
+   </ion-list>
+   </form>
+  </ion-content>

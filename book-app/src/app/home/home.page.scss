@@ -1,0 +1,67 @@
+.circleBase {
+  border-radius: 50%;
+}
+.type1 {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(90deg, #2a58a8 0%, #2201a3 100%);
+  box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+  top: -50px;
+  left: -50px;
+}
+.type2 {
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+.circle1 {
+  margin-left: 180px;
+  margin-top: 50px;
+}
+.circle2 {
+  position: absolute;
+}
+.welcomeMessage {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  p {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+}
+ion-list {
+  background: transparent;
+  transform: translateY(20vh);
+  ion-item {
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+  }
+  ion-row {
+    margin-bottom: 5vh;
+  }
+  ion-button {
+    width: 30vh;
+  }
+  .alignItems {
+    ion-checkbox,
+    ion-note {
+      vertical-align: middle;
+    }
+    ion-checkbox {
+      margin-right: 1vw;
+      --size: 1.1rem;
+    }
+  }
+}
+.signUp {
+  margin-top: 5vh;
+  font-size: 0.8rem;
+}
+ion-col {
+  ion-note {
+    font-size: 0.85rem;
+  }
+}
