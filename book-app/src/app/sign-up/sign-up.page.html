@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Username" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid">
+          Username is required (min 3 chars).
+        </ion-note>
+      <ion-item>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+       <ion-note color="danger" *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
+          Password must be at least 6 characters.
+        </ion-note>
+    </ion-list>
+
+    <ion-button expand="full" type="submit" [disabled]="signUpForm.invalid">
+      Sign Up
+    </ion-button>
+    <ion-note (click)="goToLogin()" color="primary">Already have an account? Log in</ion-note>
+  </form>
+</ion-content>

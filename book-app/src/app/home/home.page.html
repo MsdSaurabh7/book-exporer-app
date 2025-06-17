@@ -34,7 +34,7 @@
       <ion-row class="ion-margin-vertical">
         <ion-col class="alignItems">
           <div align="left">
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox formControlName="remember"></ion-checkbox>
             <ion-note>Remember me</ion-note>
           </div>
         </ion-col>
@@ -50,7 +50,7 @@
       <p class="signUp">
         <ion-note
           >Not a member yet?
-          <ion-text color="primary">Sign Up</ion-text>
+          <ion-text color="primary" [routerLink]="['/sign-up']">Sign Up</ion-text>
         </ion-note>
       </p>
    </ion-list>
