@@ -7,7 +7,8 @@
     <ion-text color="white"><p>Log In</p></ion-text>
   </ion-label>
    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-   <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+    <div style="margin: 0% 3% 0% 3%;">
+   <ion-list lines="none" class="ion-margin  ion-text-center">
      <ion-item>
         <ion-icon name="mail-outline" slot="end"></ion-icon>
         <ion-input
@@ -54,5 +55,6 @@
         </ion-note>
       </p>
    </ion-list>
+   </div>
    </form>
   </ion-content>

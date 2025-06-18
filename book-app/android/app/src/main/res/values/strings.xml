@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Book Exploring App</string>
+    <string name="title_activity_main">Book Exploring App</string>
+    <string name="package_name">com.msd.bookExplorer</string>
+    <string name="custom_url_scheme">com.msd.bookExplorer</string>
+</resources>
