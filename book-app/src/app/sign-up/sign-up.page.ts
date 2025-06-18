@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, ToastController, NavController } from '@ionic/angular/standalone';
 import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { personOutline } from 'ionicons/icons';
 
 
 @Component({
@@ -25,7 +27,7 @@ export class SignUpPage implements OnInit {
     private navCtrl: NavController,
     private toastCtrl: ToastController,
   ) {
-   
+   addIcons({ personOutline });
   }
 
    ionViewWillEnter(){

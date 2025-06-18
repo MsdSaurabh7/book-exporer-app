@@ -1,29 +1,45 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Sign Up</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<ion-content [fullscreen]="true">
+  <div class="circleBase type2 circle1"></div>
+  <div class="circleBase type1"></div>
+  <div class="circleBase type2 circle2"></div>
+  <ion-label class="welcomeMessage">
+    <ion-text color="light">Hello,</ion-text> 
+    <ion-text color="white">
+      <p>Sign Up!</p>
+    </ion-text>
+  </ion-label> 
   <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-    <ion-list>
-      <ion-item>
+    <div style="margin: 0% 3% 0% 3%;">
+   <ion-list lines="none" class="ion-margin ion-padding ion-text-center">
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
         <ion-input placeholder="Username" formControlName="username"></ion-input>
       </ion-item>
-      <ion-note color="danger" *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid">
-          Username is required (min 3 chars).
-        </ion-note>
-      <ion-item>
+      <ion-text  
+        class="ion-text-left"
+      color="danger" *ngIf="signUpForm.get('username')?.touched && signUpForm.get('username')?.invalid">
+         <p class="error"> Username is required (min 3 chars).</p>
+       </ion-text>
+       <ion-item class="ion-margin-vertical">
         <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
       </ion-item>
-       <ion-note color="danger" *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
-          Password must be at least 6 characters.
-        </ion-note>
-    </ion-list>
+       <ion-text 
+        class="ion-text-left"
+        color="danger" color="danger" *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid">
+        <p 
+          class="error">
+                    Password must be at least 6 characters.  </p>
+        </ion-text>
 
-    <ion-button expand="full" type="submit" [disabled]="signUpForm.invalid">
+    <ion-button color="primary" shape="round" type="submit" [disabled]="signUpForm.invalid">
       Sign Up
     </ion-button>
+    <p>
     <ion-note (click)="goToLogin()" color="primary">Already have an account? Log in</ion-note>
+    </p>
+    </ion-list>
+    </div>
   </form>
 </ion-content>
